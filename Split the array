@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPossibleToSplit(int[] nums) {
+        boolean possible = true;
+
+        for (int i = 0; i < nums.length; i++) {
+            int count = 0;
+
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+
+            if (count > 1) {
+                possible = false;
+                break;
+            }
+        }
+
+        return possible;
+    }
+} 
